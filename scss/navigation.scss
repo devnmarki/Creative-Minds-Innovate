@@ -1,0 +1,93 @@
+@use "utils/variables" as var;
+@use "utils/mixins" as mix;
+
+.navigation-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 80px;
+    background-color: var.$black;
+
+    @include mix.breakpoint(m) {
+        height: 120px;
+    }
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 375px;
+    height: 100%;
+    padding: 0px 23px;
+
+    &__logo {
+        width: 125px;
+        height: 46.5px;
+    }
+
+    &__menu-btn {
+        display: block;
+    }
+
+    &__action-btn {
+        display: none;
+    }
+
+    &__links {
+        display: none;
+    }
+}
+
+@include mix.breakpoint(l) {
+    .navigation {
+        width: 1440px;
+        padding: 0px 190px;
+
+        &__logo {
+            width: 161.5px;
+            height: 60px;
+        }
+
+        &__menu-btn {
+            display: none;
+        }
+
+        &__action-btn {
+            display: block;
+            width: 165px;
+            height: 50px;
+            background-color: var.$green;
+            color: var.$white;
+            font-size: 14px;
+            font-weight: var.$regular;
+            border: none;
+            border-radius: 15px;
+            transition: background-color 150ms, border 50ms, color 150ms;
+            cursor: pointer;
+
+            &:hover {
+                background-color: transparent;
+                border: 2px solid var.$green;
+                color: var.$green;
+            }
+        }
+
+        &__links {
+            display: flex;
+            column-gap: 20px;
+
+            .link {
+                text-decoration: none;
+                color: var.$white;
+                font-weight: var.$regular;
+                font-size: 16px;
+                transition: color 150ms;
+
+                &:hover {
+                    color: var.$green;
+                }
+            }
+        }
+    }
+}
