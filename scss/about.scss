@@ -1,0 +1,99 @@
+@use "utils/variables" as var;
+@use "utils/mixins" as mix;
+
+.about-us {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 40px 18px;
+
+    .grid {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        justify-content: center;
+        grid-template-rows: 70px 142px 189px 110px 297px 85px repeat(3, 329px);
+        gap: 15px;
+    }
+
+    &__panel {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var.$white;
+        border-radius: 20px;
+    }
+
+    .header-panel {
+        
+        h1 {
+            font-size: 32px;
+            font-weight: var.$bold;
+            color: var.$black;
+
+            span {
+                text-decoration: underline;
+                color: var.$green;
+            }
+        }
+    }
+
+    .description-panel {
+
+        p {
+            font-size: 1rem;
+            font-weight: var.$regular;
+            color: var.$gray;
+            text-align: center;
+            width: 310px;
+            line-height: 175%;
+        }
+    }
+
+    &__image {
+        width: 327px;
+        height: 297px;
+    }
+}
+
+@include mix.breakpoint(l) {
+    .about-us {
+        padding: 100px 0px;
+
+        .grid {
+            justify-content: center;
+            grid-template-rows: 70px 117px 140px 110px 85px;
+            grid-template-columns: 451px 531px;
+        }
+        
+        .panel-2 {
+            grid-row: 2;
+        }
+
+        .panel-3 {
+            grid-row: 3;
+        }
+
+        .panel-4 {
+            grid-row: 4;
+        }
+
+        .description-panel {
+
+            p {
+                width: 404px;
+            }
+        }
+
+        &__image {
+            width: 531px;
+            height: 482px;
+        }
+
+        .panel-5 {
+            grid-row: 5;
+            grid-column: 2 span;
+        }
+    }
+}

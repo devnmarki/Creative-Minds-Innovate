@@ -18,7 +18,7 @@
     height: 100%;
     margin-top: 40px;
     row-gap: 40px;
-    padding: 0px 23px;
+    padding: 0px 18px;
 
     .primary {
         width: 330px;
@@ -103,6 +103,10 @@
             align-items: start;
             width: 525px;
             text-align: start;
+        }
+
+        &__header {
+            font-size: 40px;
         }
 
         &__action-btns {
