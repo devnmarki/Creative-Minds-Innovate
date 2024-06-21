@@ -1,0 +1,140 @@
+@use "utils/mixins" as mix;
+@use "utils/variables" as var;
+
+.services {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 18px;
+
+    .background {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 326px;
+        background-color: var.$black;
+        border-radius: 30px;
+        padding: 60px 0px;
+    }
+
+    &__header {
+        font-weight: var.$regular;
+        font-size: 2rem;
+        color: var.$white;
+
+        span {
+            font-weight: var.$bold;
+        }
+    }
+
+    &__all-services {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        .service {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+            height: 200px;
+            border-radius: 20px;
+
+            .service-icon {
+                width: 80px;
+            }
+
+            .gray-icon {
+                filter: invert(61%) sepia(30%) saturate(308%) hue-rotate(167deg) brightness(88%) contrast(83%);
+            }
+
+            .black-icon {
+                filter: invert(7%) sepia(8%) saturate(2567%) hue-rotate(177deg) brightness(95%) contrast(86%);
+            }
+
+            &__name {
+                display: none;
+            }
+
+            &__description {
+                display: none;
+            }
+        }
+
+        .white-service {
+            background-color: var.$white;
+        }
+
+        .green-service {
+            background-color: var.$green;
+        }
+    }
+}
+
+@include mix.breakpoint(l) {
+    .services {
+        width: 100%;
+        height: 450px;
+
+        .background {
+            width: 99%;
+            height: 450px;
+        }
+
+        &__all-services {
+            flex-direction: row;
+            margin-top: 40px;
+
+            .service {
+                flex-direction: column;
+                
+                .service-icon {
+                    transition: width 200ms;
+                }
+                
+                &__name {
+                    display: none;
+                    opacity: 0;
+                    font-size: 20px;
+                    font-weight: var.$bold;
+                    color: var.$white;
+                }
+                
+                &__description {
+                    display: none;
+                    opacity: 0;
+                    text-align: center;
+                    font-size: 12px;
+                    font-weight: var.$regular;
+                    color: var.$white;
+                    width: 180px;
+                }
+
+                .name-black {
+                    color: var.$black;
+                }
+
+                .desc-black {
+                    color: var.$black;
+                }
+                
+                &:hover {
+                    .service-icon {
+                        width: 35px;
+                    }
+                    
+                    .service__name {
+                        display: block;
+                        opacity: 1;
+                    }
+                    
+                    .service__description {
+                        display: block;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
