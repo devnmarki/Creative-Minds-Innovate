@@ -35,6 +35,8 @@
 
         .service {
             display: flex;
+            flex-direction: column;
+            row-gap: 25px;
             justify-content: center;
             align-items: center;
             width: 200px;
@@ -54,7 +56,7 @@
             }
 
             &__name {
-                display: none;
+                display: block;
             }
 
             &__description {
@@ -88,6 +90,7 @@
 
             .service {
                 flex-direction: column;
+                row-gap: 0px;
                 
                 .service-icon {
                     transition: width 200ms;
