@@ -1,0 +1,66 @@
+@use "utils/variables" as var;
+@use "utils/mixins" as mix;
+
+.portfolio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 40px 0px;
+
+    &__header {
+        font-size: 32px;
+        font-weight: var.$bold;
+        color: var.$black;
+        margin-bottom: 40px;
+    }
+
+    .projects {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+
+        .proj-1 {
+            background-image: url("/images/huddle.png");
+        }
+
+        .proj-2 {
+            background-image: url("/images/tech_solutions.jpg");
+        }
+
+        .proj-3 {
+            background-image: url("/images/start.png");
+        }
+
+        .proj-4 {
+            background-image: url("/images/tech_vision_solutions.png");
+        }
+    }
+
+    &__project {
+        width: 329px;
+        height: 197px;
+        border-radius: 30px;
+        border: 2px solid var.$green;
+        background-size: contain;
+    }
+}
+
+@include mix.breakpoint(l) {
+    .portfolio {
+        margin: 100px 0px;
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(2, 518px);
+            grid-template-rows: repeat(2, 310px);
+            gap: 25px;
+        }
+
+        &__project {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+        }
+    }
+}
