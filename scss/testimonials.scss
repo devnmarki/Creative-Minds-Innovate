@@ -76,6 +76,7 @@
 
 @include mix.breakpoint(l) {
     .testimonials {
+        margin-bottom: 100px;
         
         &__bg {
             width: 98%;

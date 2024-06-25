@@ -19,6 +19,15 @@ button {
     cursor: pointer;
 }
 
+input {
+    outline: none;
+}
+
+textarea {
+    outline: none;
+    font-family: var.$font;
+}
+
 .green-hl {
     color: var.$green;
 }

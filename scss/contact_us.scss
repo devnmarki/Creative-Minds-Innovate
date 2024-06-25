@@ -1,0 +1,196 @@
+@use "utils/variables" as var;
+@use "utils/mixins" as mix;
+
+.contact-us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 40px;
+
+    .grid {
+        display: grid;
+        justify-content: center;
+        grid-template-rows: 85px 422px 67px 143px 67px 115px 67px 207px 254px;
+        width: 331px;
+        gap: 15px;
+    }
+
+    &__field {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background-color: var.$white;
+        border-radius: 20px;
+    }
+
+    .header-field {
+        
+        h1 {
+            font-size: 2rem;
+            font-weight: var.$bold;
+            color: var.$black;
+
+            span {
+                color: var.$green;
+                text-decoration: underline; 
+            }
+        }
+    }
+
+    .input-field {
+        display: flex;
+        flex-direction: column;
+        row-gap: 15px;
+
+        .input {
+            display: flex;
+            flex-direction: column;
+            row-gap: 4px;
+
+            .placeholder {
+                font-size: 12px;
+                font-weight: var.$regular;
+                color: var.$gray;
+                margin-left: 5px;
+            }
+
+            input {
+                width: 295px;
+                height: 50px;
+                border-radius: 15px;
+                border: 1px solid var.$gray;
+                padding: 0px 15px;
+                color: var.$gray;
+
+                &::placeholder {
+                    font-size: 12px;
+                    font-weight: var.$regular;
+                    color: var.$gray;
+                }
+            }
+
+            .message-input {
+                width: 295px;
+                height: 100px;
+                border-radius: 15px;
+                resize: none;
+                padding: 15px;
+                border: 1px solid var.$gray;
+                color: var.$gray;
+
+                &::placeholder {
+                    font-size: 12px;
+                    font-weight: var.$regular;
+                    color: var.$gray;
+                }
+            }
+        }
+
+        button {
+            width: 295px;
+            height: 50px;
+            background-color: var.$green;
+            border-radius: 15px;
+            font-size: 14px;
+            font-weight: var.$regular;
+            color: var.$white;
+            border: none;
+        }
+    }
+
+    .contact-header {
+        display: flex;
+        justify-content: start;
+        padding: 0px 25px;
+        
+        h1 {
+            font-size: 24px;
+            font-weight: var.$bold;
+        }
+    }
+
+    .contact-information {
+        flex-direction: column;
+        align-items: start;
+        padding: 0px 25px;
+
+        p {
+            font-size: 1rem;
+            font-weight: var.$bold;
+            color: var.$gray;
+        }
+    }
+
+    .email-adresses-field {
+
+        .email-adresses {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+        }
+    }
+
+    .image-field {
+        background-image: url("/images/contact_us_image.jpg");
+        background-size: cover;
+        border-radius: 20px;
+    }
+}
+
+@include mix.breakpoint(l) {
+    .contact-us {
+        align-items: center;
+        margin-bottom: 100px;
+
+        .grid {
+            grid-template-columns: 387px 393px;
+            grid-template-rows: 85px 67px 143px 67px 115px 67px 207px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header-field {
+            grid-column: 2 span;
+        }
+
+        .input-field {
+            grid-column: 2;
+            grid-row: 4 span;
+
+            .input {
+                width: 343px;
+
+                input {
+                    width: 100%;
+                }
+
+                .message-input {
+                    width: 100%;
+                }
+
+            }
+
+            button {
+                width: 343px;
+            }
+        }
+    }
+
+    .address-header-field {
+        grid-row: 2;
+    }
+
+    .email-adresses-field {
+        grid-column: 1;
+    }
+
+    .image-field {
+        grid-column: 2;
+        width: 100%;
+        height: 289px;
+        margin-bottom: 80px;
+    }
+}
