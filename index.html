@@ -14,22 +14,34 @@
     <div class="navigation-wrapper">
       <nav class="navigation">
         <img src="/images/Logo.svg" alt="Logo" class="navigation__logo">
-        <img src="/icons/menu-btn.svg" alt="Menu Button" class="navigation__menu-btn">
+
+        <img src="/icons/menu-btn.svg" alt="Menu Button" class="navigation__menu-btn shown" id="open-menu-btn">
+        <img src="/icons/x-solid.svg" alt="Close Menu Button" class="navigation__close-menu-btn hidden" id="close-menu-btn">
         
         <div class="navigation__links">
-          <a href="#" class="link">Home</a>
-          <a href="#" class="link">About Us</a>
-          <a href="#" class="link">Services</a>
-          <a href="#" class="link">Portfolio</a>
-          <a href="#" class="link">Contact Us</a>
+          <a href="#hero" class="link">Home</a>
+          <a href="#about-us" class="link">About Us</a>
+          <a href="#services" class="link">Services</a>
+          <a href="#portfolio" class="link">Portfolio</a>
+          <a href="#contact-us" class="link">Contact Us</a>
         </div>
         
         <button class="navigation__action-btn">Get Started</button>
+
+        <div class="fade" id="fade">
+          <div class="menu">
+            <a href="#hero" class="link">Home</a>
+            <a href="#about-us" class="link">About Us</a>
+            <a href="#services" class="link">Services</a>
+            <a href="#portfolio" class="link">Portfolio</a>
+            <a href="#contact-us" class="link">Contact Us</a>
+          </div>
+        </div> 
       </nav>
     </div>
 
     <div class="hero-wrapper">
-      <section class="hero">
+      <section class="hero" id="hero">
         <div class="primary">
           <h1 class="hero__header">Unleash Your <span>Brand's Potential</span> with Creative Minds Innovate.</h1>
           <p class="hero__description">Transforming Ideas into Extraordinary Results.</p>
@@ -44,7 +56,7 @@
       </section>
     </div>
 
-    <section class="about-us">
+    <section class="about-us" id="about-us">
       <div class="grid">
         <div class="about-us__panel header-panel panel-1">
           <h1>About <span>Us</span></h1>
@@ -89,7 +101,7 @@
       </div>
     </section>
 
-    <section class="services">
+    <section class="services" id="services">
       <div class="background">
         <h1 class="services__header">Our <span>Services</span></h1>
         <div class="services__all-services">
@@ -117,7 +129,7 @@
       </div>
     </section>
 
-    <section class="portfolio">
+    <section class="portfolio" id="portfolio">
       <h1 class="portfolio__header">Portfolio</h1>
 
       <div class="projects">
@@ -137,7 +149,7 @@
       </div>
     </section>
 
-    <section class="testimonials">
+    <section class="testimonials" id="testimonials">
       <div class="testimonials__bg">
         <h1 class="testimonials__header">What Our <span>Clients</span> Say</h1>
 
@@ -166,7 +178,7 @@
       </div>
     </section>
 
-    <section class="contact-us">
+    <section class="contact-us" id="contact-us">
       <div class="grid">
         <div class="contact-us__field header-field">  
           <h1 class="contact-us__header">Contact <span>Us</span></h1>

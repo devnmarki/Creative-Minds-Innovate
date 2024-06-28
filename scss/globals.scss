@@ -28,6 +28,18 @@ textarea {
     font-family: var.$font;
 }
 
+a {
+    text-decoration: none;
+}
+
 .green-hl {
     color: var.$green;
+}
+
+.shown {
+    display: block;
+}
+
+.hidden {
+    display: none;
 }
